@@ -1,7 +1,7 @@
 const data = require('../sample/data.json');
 
 function getHotels(req, res) {
-    res.status(200).send({ data });
+    res.status(200).send(data);
 }
 
 function getHotelsFilterStar(req, res) {
@@ -13,16 +13,31 @@ function getHotelsFilterStar(req, res) {
             break;
         } else {
             for (iterator of data) {
-                if(iterator.stars == arr[i]){
+                if (iterator.stars == arr[i]) {
                     newData.push(iterator);
                 }
             }
         }
     }
-    res.status(200).send( newData );
+    res.status(200).send(newData);
+}
+
+function getHotelsSearch(req, res) {
+    let { txt } = req.params;
+    let filtreData = [];
+    data.filter((val) => {
+        if (txt === "") {
+            
+        } else if (val.name.toLowerCase().includes(txt.toLowerCase())) {
+            filtreData.push(val)
+        }
+    })
+
+    res.status(200).send(filtreData)
 }
 
 module.exports = {
     getHotels,
-    getHotelsFilterStar
+    getHotelsFilterStar,
+    getHotelsSearch
 }
