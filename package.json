@@ -7,7 +7,7 @@
     "dev": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Luis David Huertas Redondo",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
