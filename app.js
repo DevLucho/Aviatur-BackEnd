@@ -23,7 +23,7 @@ app.use('/api/hotels', require('./routes/hotel'));
 // archivos staticos
 app.use('/public/img', express.static(path.join(__dirname, 'assets', 'images')));
 app.use('/public/img/hotels', express.static(path.join(__dirname, 'assets', 'images', 'hotels')));
-app.use('/public/ico/amenities', express.static(path.join(__dirname, 'assets', 'icons')));
+app.use('/public/ico/amenities', express.static(path.join(__dirname, 'assets', 'icons', 'amenities')));
 app.use('/public/ico/filters', express.static(path.join(__dirname, 'assets', 'icons', 'filters')));
 
 module.exports = app
