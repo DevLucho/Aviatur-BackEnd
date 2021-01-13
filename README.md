@@ -3,6 +3,6 @@
 ## Instalación
 ```
 > git clone https://github.com/DevLucho/Aviatur-BackEnd.git
-> cd Aviantur-BackEnd
+> cd Aviatur-BackEnd-master
 > npm install
 ```
