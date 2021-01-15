@@ -1,8 +1,10 @@
 const { appConfig } = require('./config');
 const morgan = require('morgan'); // Middleware -> Procesa datos antes que el servidor los reciba
 const cors = require('cors');
-const path = require('path')
+const path = require('path');
+const fs = require('fs');
 const express = require('express');
+
 
 const app = express();
 
@@ -25,5 +27,15 @@ app.use('/public/img', express.static(path.join(__dirname, 'assets', 'images')))
 app.use('/public/img/hotels', express.static(path.join(__dirname, 'assets', 'images', 'hotels')));
 app.use('/public/ico/amenities', express.static(path.join(__dirname, 'assets', 'icons', 'amenities')));
 app.use('/public/ico/filters', express.static(path.join(__dirname, 'assets', 'icons', 'filters')));
+
+app.get('/public/amenities', (req, res) => {
+    fs.readdir(process.env.APP_DIR_AMENITIES, (err, archivos) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.send(archivos)
+        }
+    })
+} )
 
 module.exports = app
