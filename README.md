@@ -13,3 +13,9 @@
 
 ```
 - http://localhost:8080/
+
+## Configuración DB
+- MongoDB
+- Configurar DB en el archivo .env (nombreDB, puerto, host) 
+- Importar datos: sample/data.json
+- Correr servidor
